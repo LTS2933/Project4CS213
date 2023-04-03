@@ -38,7 +38,9 @@ public class OrderingBasketController implements Initializable {
 
     @FXML
     private Button backToMainViewButton;
-
+    
+    @FXML
+    private Button cancelOrderButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
