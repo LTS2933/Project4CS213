@@ -51,12 +51,6 @@ public class OrderingDonutsController implements Initializable {
         donutImages.put("donut holes", new Image(getClass().getResourceAsStream("easy-homemade-glazed-doughnut-holes-recipe.jpg")));
 
         donutTypeComboBox.setOnAction(event -> {
-            String selectedDonut = donutTypeComboBox.getValue();
-            Image selectedImage = donutImages.get(selectedDonut);
-            donutImageView.setImage(selectedImage);
-        });
-
-        donutTypeComboBox.setOnAction(event -> {
             String selectedType = donutTypeComboBox.getValue();
             ObservableList<String> flavors = FXCollections.observableArrayList();
             switch (selectedType) {
@@ -71,6 +65,9 @@ public class OrderingDonutsController implements Initializable {
                     break;
             }
             flavorsListView.setItems(flavors);
+            String selectedDonut = donutTypeComboBox.getValue();
+            Image selectedImage = donutImages.get(selectedDonut);
+            donutImageView.setImage(selectedImage);
         });
     }
 
