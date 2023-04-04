@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -19,15 +18,16 @@
          </font>
       </Text>
       <ComboBox fx:id="donutTypeComboBox" layoutX="40.0" layoutY="103.0" prefWidth="150.0" />
-      <ImageView fx:id="donutImageView" fitHeight="150.0" fitWidth="200.0" layoutX="366.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="donutImageView" fitHeight="108.0" fitWidth="179.0" layoutX="387.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
       <ListView fx:id="flavorsListView" layoutX="40.0" layoutY="178.0" prefHeight="200.0" prefWidth="150.0" />
       <Label layoutX="206.0" layoutY="260.0" text="Sub-total:" />
       <TextField fx:id="subTotalTextField" layoutX="261.0" layoutY="256.0" prefHeight="25.0" prefWidth="113.0" />
-      <TextArea fx:id="orderingBasketTextArea" layoutX="387.0" layoutY="187.0" prefHeight="173.0" prefWidth="159.0" />
       <TextField fx:id="quantityTextField" layoutX="261.0" layoutY="228.0" prefHeight="25.0" prefWidth="76.0" />
       <Label layoutX="207.0" layoutY="232.0" text="Quantity:" />
-      <Button fx:id="addToOrderButton" layoutX="416.0" layoutY="362.0" mnemonicParsing="false" text="Add to Order" />
+      <Button fx:id="addToOrderButton" layoutX="424.0" layoutY="324.0" mnemonicParsing="false" text="Add to Order" />
       <Label layoutX="57.0" layoutY="80.0" text="Choose a Donut Type:" />
       <Button fx:id="backToMainViewButton" layoutX="244.0" layoutY="337.0" mnemonicParsing="false" onAction="#showMainViewScreen" text="Back to Main view" />
+      <ListView fx:id="orderingBasketListView" layoutX="402.0" layoutY="128.0" prefHeight="192.0" prefWidth="132.0" />
+      <Button fx:id="removeFromOrderButton" layoutX="424.0" layoutY="362.0" mnemonicParsing="false" text="Remove Item" />
    </children>
 </AnchorPane>
