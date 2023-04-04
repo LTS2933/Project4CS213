@@ -81,10 +81,13 @@ public class OrderingDonutsController implements Initializable {
     private TextField subTotalTextField;
 
     @FXML
-    private TextArea orderingBasketTextArea;
+    private TextArea orderingBasketListView;
 
     @FXML
     private Button addToOrderButton;
+
+    @FXML
+    private Button removeFromOrderButton;
 
     @FXML
     private Button backToMainViewButton;
