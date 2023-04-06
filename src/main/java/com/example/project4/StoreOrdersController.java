@@ -113,7 +113,7 @@ public class StoreOrdersController implements Initializable {
         } catch (IOException e){
             ordersError.setText(e.toString());
         }
-        ordersError.setText("Successfully put contents in file called exports.txt!");
+        ordersError.setText("Successfully put contents in file called orders.txt!");
     }
     /**
      * Event handler that changes the view to the MainView when the button to
