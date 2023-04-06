@@ -181,7 +181,11 @@ public class OrderingCoffeeController implements Initializable {
         coffeeError.setText("Successfully added coffee!");
         clear();
     }
-
+    /**
+     * Event handler that changes the view to the MainView when the button to
+     * do so is clicked.
+     * @throws IOException should there be an issue with directories or input stream.
+     */
     @FXML
     protected void showMainViewScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
