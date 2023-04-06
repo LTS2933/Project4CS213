@@ -3,8 +3,6 @@ package com.example.project4;
 import com.example.project4.MainController;
 import com.example.project4.model.MenuItem;
 import com.example.project4.model.Order;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -99,6 +97,10 @@ public class OrderingBasketController implements Initializable {
      */
     @FXML
     protected void onPlaceOrder(){
+        if (MainController.getCurrentOrder().isEmpty()){
+            orderError.setText("Please enter items to the order!");
+            return;
+        }
         MainController.addOrder(new Order(this.order));
         this.order.setMenuItems(new ArrayList<MenuItem>());
         this.items = FXCollections.observableArrayList();
