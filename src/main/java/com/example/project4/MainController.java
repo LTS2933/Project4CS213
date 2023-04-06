@@ -95,7 +95,11 @@ public class MainController {
         currentOrder.clear();
     }
 
-
+    /**
+     * Event handler that changes the view to the OrderingDonutsView when the button to
+     * do so is clicked.
+     * @throws IOException should there be an issue with directories or input stream.
+     */
     @FXML
     protected void showDonutOrderScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("OrderingDonutsView.fxml"));
@@ -104,6 +108,11 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
+    /**
+     * Event handler that changes the view to the OrderingCoffeeView when the button to
+     * do so is clicked.
+     * @throws IOException should there be an issue with directories or input stream.
+     */
     @FXML
     protected void showCoffeeOrderScreen(ActionEvent event) throws IOException{
         root = FXMLLoader.load(getClass().getResource("OrderingCoffeeView.fxml"));
@@ -112,6 +121,11 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
+    /**
+     * Event handler that changes the view to the OrderingBasketView when the button to
+     * do so is clicked.
+     * @throws IOException should there be an issue with directories or input stream.
+     */
     @FXML
     protected void showOrderingBasketScreen(ActionEvent event) throws IOException{
         root = FXMLLoader.load(getClass().getResource("OrderingBasketView.fxml"));
@@ -120,7 +134,11 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
-
+    /**
+     * Event handler that changes the view to the StoreOrdersView when the button to
+     * do so is clicked.
+     * @throws IOException should there be an issue with directories or input stream.
+     */
     @FXML
     protected void showStoreOrdersScreen(ActionEvent event) throws IOException{
         root = FXMLLoader.load(getClass().getResource("StoreOrdersView.fxml"));
