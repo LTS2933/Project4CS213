@@ -146,7 +146,8 @@ public class Donut extends MenuItem {
      * @return String representing the donut
      */
     @Override
+    @Override
     public String toString(){
-        return "Donut - " + type + ": " + flavor + "\n";
+        return "Donut - " + type + " \nflavor: " + flavor + "\n" + "quantity: " + this.quantity + "\n";
     }
 }
