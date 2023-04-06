@@ -1,3 +1,8 @@
+package com.example.project4;
+
+import com.example.project4.MainController;
+import com.example.project4.model.Coffee;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.MapChangeListener;
 import javafx.event.ActionEvent;
@@ -67,6 +72,9 @@ public class OrderingCoffeeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        numberOfCupsTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            onChangeQuantity();
+        });
         sizeToggleGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
@@ -100,13 +108,22 @@ public class OrderingCoffeeController implements Initializable {
      */
     private void onChangeQuantity(){
         String stringQuantity = numberOfCupsTextField.getText();
-        if (sizeToggleGroup.getSelectedToggle() == null) return;
+        if (sizeToggleGroup.getSelectedToggle() == null) {
+            coffeeError.setText("Please enter a size!");
+            return;
+        }
         String size = sizeToggleGroup.getSelectedToggle().getUserData().toString();
         int quantity = 0;
         try {
             quantity = Integer.parseInt(stringQuantity);
-        } catch (Exception e){return;}
-        if (quantity > 5 || quantity <= 0) return;
+        } catch (Exception e){
+            coffeeError.setText("Please enter a valid quantity!");
+            return;
+        }
+        if (quantity > 5 || quantity <= 0) {
+            coffeeError.setText("Please enter a quantity between 1-5!");
+            return;
+        }
 
         if (sweetCreamCheckBox.isSelected()) this.addOns.add("SWEET CREAM");
         if (frenchVanillaCheckBox.isSelected()) this.addOns.add("FRENCH VANILLA");
@@ -181,11 +198,7 @@ public class OrderingCoffeeController implements Initializable {
         coffeeError.setText("Successfully added coffee!");
         clear();
     }
-    /**
-     * Event handler that changes the view to the MainView when the button to
-     * do so is clicked.
-     * @throws IOException should there be an issue with directories or input stream.
-     */
+
     @FXML
     protected void showMainViewScreen(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
