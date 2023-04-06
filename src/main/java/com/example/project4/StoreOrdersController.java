@@ -1,6 +1,6 @@
 package com.example.project4;
 
-import com.example.project4.model.MenuItem;
+import com.example.project4.MainController;
 import com.example.project4.model.Order;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +14,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -22,7 +21,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -89,7 +87,7 @@ public class StoreOrdersController implements Initializable {
         }}
         MainController.removeOrder(order);
         ordersDetails.setItems(newItems);
-        ordersError.setText("");
+        ordersError.setText("Successfully cancelled order!");
     }
 
     /**
@@ -115,6 +113,7 @@ public class StoreOrdersController implements Initializable {
         } catch (IOException e){
             ordersError.setText(e.toString());
         }
+        ordersError.setText("Successfully put contents in file called exports.txt!");
     }
     /**
      * Event handler that changes the view to the MainView when the button to
