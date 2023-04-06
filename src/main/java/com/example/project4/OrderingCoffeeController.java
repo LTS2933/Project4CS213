@@ -109,7 +109,7 @@ public class OrderingCoffeeController implements Initializable {
     private void onChangeQuantity(){
         String stringQuantity = numberOfCupsTextField.getText();
         if (sizeToggleGroup.getSelectedToggle() == null) {
-            coffeeError.setText("Please enter a size!");
+            //coffeeError.setText("Please enter a size!");
             return;
         }
         String size = sizeToggleGroup.getSelectedToggle().getUserData().toString();
@@ -117,11 +117,11 @@ public class OrderingCoffeeController implements Initializable {
         try {
             quantity = Integer.parseInt(stringQuantity);
         } catch (Exception e){
-            coffeeError.setText("Please enter a valid quantity!");
+            //coffeeError.setText("Please enter a valid quantity!");
             return;
         }
         if (quantity > 5 || quantity <= 0) {
-            coffeeError.setText("Please enter a quantity between 1-5!");
+            //coffeeError.setText("Please enter a quantity between 1-5!");
             return;
         }
 
